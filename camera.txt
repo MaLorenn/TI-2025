@@ -1,0 +1,91 @@
+User Controls
+
+                     brightness 0x00980900 (int)    : min=-64 max=64 step=1 default=0 value=0
+                       contrast 0x00980901 (int)    : min=0 max=100 step=1 default=37 value=46
+                     saturation 0x00980902 (int)    : min=0 max=128 step=1 default=64 value=64
+                            hue 0x00980903 (int)    : min=-180 max=180 step=1 default=0 value=0
+        white_balance_automatic 0x0098090c (bool)   : default=1 value=1
+                          gamma 0x00980910 (int)    : min=100 max=500 step=1 default=300 value=300
+                           gain 0x00980913 (int)    : min=0 max=128 step=1 default=64 value=43
+           power_line_frequency 0x00980918 (menu)   : min=0 max=2 default=1 value=1 (50 Hz)
+      white_balance_temperature 0x0098091a (int)    : min=2800 max=6500 step=10 default=4600 value=4600 flags=inactive
+                      sharpness 0x0098091b (int)    : min=0 max=100 step=1 default=90 value=90
+         backlight_compensation 0x0098091c (int)    : min=0 max=2 step=1 default=1 value=1
+
+Camera Controls
+
+                  auto_exposure 0x009a0901 (menu)   : min=0 max=3 default=3 value=1 (Manual Mode)
+         exposure_time_absolute 0x009a0902 (int)    : min=1 max=10000 step=1 default=166 value=1250
+     exposure_dynamic_framerate 0x009a0903 (bool)   : default=0 value=0
+                   pan_absolute 0x009a0908 (int)    : min=-57600 max=57600 step=3600 default=0 value=0
+                  tilt_absolute 0x009a0909 (int)    : min=-43200 max=43200 step=3600 default=0 value=0
+                  zoom_absolute 0x009a090d (int)    : min=0 max=3 step=1 default=0 value=0
+
+
+
+
+
+
+
+
+
+ioctl: VIDIOC_ENUM_FMT
+	Type: Video Capture
+
+	[0]: 'MJPG' (Motion-JPEG, compressed)
+		Size: Discrete 1920x1080
+			Interval: Discrete 0.017s (60.000 fps)
+			Interval: Discrete 0.033s (30.000 fps)
+		Size: Discrete 1280x800
+			Interval: Discrete 0.017s (60.000 fps)
+			Interval: Discrete 0.033s (30.000 fps)
+		Size: Discrete 1280x720
+			Interval: Discrete 0.017s (60.000 fps)
+			Interval: Discrete 0.033s (30.000 fps)
+		Size: Discrete 1024x768
+			Interval: Discrete 0.017s (60.000 fps)
+			Interval: Discrete 0.033s (30.000 fps)
+		Size: Discrete 960x540
+			Interval: Discrete 0.017s (60.000 fps)
+			Interval: Discrete 0.033s (30.000 fps)
+		Size: Discrete 848x480
+			Interval: Discrete 0.017s (60.000 fps)
+			Interval: Discrete 0.033s (30.000 fps)
+		Size: Discrete 800x600
+			Interval: Discrete 0.017s (60.000 fps)
+			Interval: Discrete 0.033s (30.000 fps)
+		Size: Discrete 320x240
+			Interval: Discrete 0.017s (60.000 fps)
+			Interval: Discrete 0.033s (30.000 fps)
+		Size: Discrete 352x288
+			Interval: Discrete 0.017s (60.000 fps)
+			Interval: Discrete 0.033s (30.000 fps)
+		Size: Discrete 640x360
+			Interval: Discrete 0.017s (60.000 fps)
+			Interval: Discrete 0.033s (30.000 fps)
+		Size: Discrete 640x480
+			Interval: Discrete 0.017s (60.000 fps)
+			Interval: Discrete 0.033s (30.000 fps)
+	[1]: 'YUYV' (YUYV 4:2:2)
+		Size: Discrete 1920x1080
+			Interval: Discrete 0.200s (5.000 fps)
+		Size: Discrete 1280x800
+			Interval: Discrete 0.100s (10.000 fps)
+		Size: Discrete 1280x720
+			Interval: Discrete 0.100s (10.000 fps)
+		Size: Discrete 1024x768
+			Interval: Discrete 0.100s (10.000 fps)
+		Size: Discrete 960x540
+			Interval: Discrete 0.067s (15.000 fps)
+		Size: Discrete 848x480
+			Interval: Discrete 0.067s (15.000 fps)
+		Size: Discrete 800x600
+			Interval: Discrete 0.067s (15.000 fps)
+		Size: Discrete 320x240
+			Interval: Discrete 0.033s (30.000 fps)
+		Size: Discrete 352x288
+			Interval: Discrete 0.033s (30.000 fps)
+		Size: Discrete 640x360
+			Interval: Discrete 0.033s (30.000 fps)
+		Size: Discrete 640x480
+			Interval: Discrete 0.033s (30.000 fps)
