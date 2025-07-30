@@ -33,6 +33,9 @@ apply_saved_settings()
 
 # 打开摄像头
 cap = cv2.VideoCapture(2)
+cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)
+cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)
+cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*'MJPG'))
 if not cap.isOpened():
     print("无法打开摄像头")
     exit()
@@ -75,7 +78,7 @@ while True:
     # 显示帧率（如果已计算）
     if fps is not None:
         cv2.putText(frame, f"FPS: {fps:.2f}", (10, 30),
-                    cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 255), 2)
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
 
     cv2.imshow('Camera Controls', frame)
 
