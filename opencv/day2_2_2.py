@@ -11,8 +11,8 @@ ser = serial.Serial(SERIAL_PORT, SERIAL_BAUD, timeout=1)
 
 cap = cv2.VideoCapture(0, cv2.CAP_V4L2)
 cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*'MJPG'))  # MJPG usually supports higher fps
-cap.set(cv2.CAP_PROP_FRAME_WIDTH, 960)
-cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 540)
+cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
+cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
 cap.set(cv2.CAP_PROP_FPS, 60)
 #kernel越小对小分辨率越好
 kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (3, 3))
@@ -101,11 +101,11 @@ while True:
         max_area = 0
         for i, contour in enumerate(contours):
             if hierarchy[0][i][3] != -1:
-                epsilon = 0.02 * cv2.arcLength(contour, True)
+                epsilon = 0.015 * cv2.arcLength(contour, True)
                 approx = cv2.approxPolyDP(contour, epsilon, True)
                 if len(approx) == 4:
                     area = cv2.contourArea(approx)
-                    if area > max_area and area >= 3400 and area <= 70000:
+                    if area > max_area and area >= 2500 and area <= 70000:
                         max_area = area
                         approx_inner = approx.reshape(-1, 2)
         if approx_inner is not None:
